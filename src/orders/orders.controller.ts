@@ -13,7 +13,7 @@ export class OrdersController {
   }
 
   @MessagePattern('findAllOrders')
-  findAll(@Payload() orderPaginationDto: OrderPaginationDto) {
+  async findAll(@Payload() orderPaginationDto: OrderPaginationDto) {
     return this.ordersService.findAll( orderPaginationDto );
   }
 
